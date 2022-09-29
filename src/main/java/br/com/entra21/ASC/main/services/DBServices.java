@@ -43,7 +43,9 @@ public class DBServices {
 
 //		Admin a1 = new Admin(null, "admin", "admin", "admin");
 		
-		Admin a1 = new Admin(null, "ariana", "admin", "$2a$12$aZ11OqYnmuTNGdaKNBCIkei1obOsiy.CFz3SxqH4OXaoahueN8G6O");
+//		Admin a1 = new Admin(null, "ariana", "admin", "$2a$12$aZ11OqYnmuTNGdaKNBCIkei1obOsiy.CFz3SxqH4OXaoahueN8G6O");
+		
+		Admin a1 = new Admin(null, "teste", "teste", "teste");
 
 		m1.getList().add(s1);
 		p1.getList().add(s1);

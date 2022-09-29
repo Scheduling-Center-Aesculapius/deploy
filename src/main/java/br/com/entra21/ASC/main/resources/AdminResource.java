@@ -37,11 +37,12 @@ public class AdminResource {
 
 	@Autowired
 	private AdminService service;
-	private final PasswordEncoder encoder;
+//	private final PasswordEncoder encoder;
 	private final AdminRepository repository;
 
-	public AdminResource(PasswordEncoder encoder, AdminRepository repository) {
-		this.encoder = encoder;
+//	PasswordEncoder encoder,
+	public AdminResource( AdminRepository repository) {
+//		this.encoder = encoder;
 		this.repository = repository;
 	}
 
@@ -81,27 +82,27 @@ public class AdminResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@PostMapping("/savePassword")
-	public ResponseEntity<Admin> savePassword(@RequestBody Admin admin) {
-		admin.setPassword(encoder.encode(admin.getPassword()));
-		return ResponseEntity.ok(repository.save(admin));
-	}
+//	@PostMapping("/savePassword")
+//	public ResponseEntity<Admin> savePassword(@RequestBody Admin admin) {
+//		admin.setPassword(encoder.encode(admin.getPassword()));
+//		return ResponseEntity.ok(repository.save(admin));
+//	}
 
 //	validar a senha por username
-	@GetMapping("validatePassword")
-	public ResponseEntity<Boolean> validatePassword(@RequestParam String username, @RequestParam String password) {
-
-		Optional<Admin> obj = Optional.of(repository.findByUsername(username));
-		if (obj.isEmpty()) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
-		}
-		Admin admin = obj.get();
-		boolean valid = encoder.matches(password, admin.getPassword());
-
-		HttpStatus status = (valid) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;
-		return ResponseEntity.status(status).body(valid);
-
-	}
+//	@GetMapping("validatePassword")
+//	public ResponseEntity<Boolean> validatePassword(@RequestParam String username, @RequestParam String password) {
+//
+//		Optional<Admin> obj = Optional.of(repository.findByUsername(username));
+//		if (obj.isEmpty()) {
+//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
+//		}
+//		Admin admin = obj.get();
+//		boolean valid = encoder.matches(password, admin.getPassword());
+//
+//		HttpStatus status = (valid) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;
+//		return ResponseEntity.status(status).body(valid);
+//
+//	}
 
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<AdminDTO> update(@PathVariable Integer id, @Valid @RequestBody Admin obj) {
