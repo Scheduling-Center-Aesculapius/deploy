@@ -24,7 +24,6 @@ import br.com.entra21.ASC.main.dtos.AdminDTO;
 import br.com.entra21.ASC.main.model.Admin;
 import br.com.entra21.ASC.main.services.AdminService;
 
-@Configuration
 @CrossOrigin(origins = "*")
 @RestController // VAI PODER RECEBER REQUISIÇÕES DO TIPO HTTP
 @RequestMapping(value = "/admins") // SETANDO UM ENDPOINT INICIAL PARA PODERMOS ACESSAR O RECURSO DOS MEDICOS
