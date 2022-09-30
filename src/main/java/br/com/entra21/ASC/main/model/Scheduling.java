@@ -27,8 +27,8 @@ public class Scheduling implements Serializable {
 	private LocalDateTime dateOpen;
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dateClosed;
+	
 	@NotEmpty(message = "Field requerid")
-
 	private String description;
 	private Integer priority;
 	private Integer status;
