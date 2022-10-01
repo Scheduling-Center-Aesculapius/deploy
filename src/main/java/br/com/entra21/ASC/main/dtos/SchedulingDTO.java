@@ -14,12 +14,13 @@ public class SchedulingDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
+	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-
 	private LocalDateTime dateOpen;
+	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-
 	private LocalDateTime dateClosed;
+	
 	@NotEmpty(message = "Field requerid")
 	private String description;
 	private Integer priority;

@@ -39,7 +39,7 @@ public class DBServices {
 
 		Patient p1 = new Patient(null, "Filipe", "batatinhaFrita123", "oieu souogoku", Sex.M, "04328835416", "filipe.quickflip@gmail.com", "48998475279", "elza maria pereira pitigliani", "158", "88780-000", "Imbituba", "Santa Catarina", "Diarreia");
 
-		Scheduling s1 = new Scheduling(null, "batatinha frita", PRIORITY.HIGH, STATUS.OPEN, m1, p1);
+		Scheduling s1 = new Scheduling(null, null, "batatinha frita", PRIORITY.HIGH, STATUS.OPEN, m1, p1);
 
 //		Admin a1 = new Admin(null, "admin", "admin", "admin");
 		

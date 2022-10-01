@@ -23,10 +23,13 @@ public class Scheduling implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dateOpen;
+	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dateClosed;
+	
 	@NotEmpty(message = "Field requerid")
 
 	private String description;
@@ -48,11 +51,11 @@ public class Scheduling implements Serializable {
 		this.setStatus(STATUS.OPEN); // e se ela foi criada por padrão ela esta iniciada
 	}
 
-	public Scheduling(Integer id, String description, PRIORITY priority, STATUS status, Medical medical,
+	public Scheduling(Integer id, LocalDateTime dataOpen, String description, PRIORITY priority, STATUS status, Medical medical,
 			Patient patient) {
 		super();
 		this.id = id;
-		this.setDateOpen(LocalDateTime.now());
+		this.dateOpen = dataOpen;
 		this.description = description;
 		this.priority = (priority == null) ? 0 : priority.getCod();
 		this.status = (status == null) ? 0 : status.getCod();

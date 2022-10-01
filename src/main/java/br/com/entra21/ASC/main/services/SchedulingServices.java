@@ -1,6 +1,8 @@
 package br.com.entra21.ASC.main.services;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +10,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import br.com.entra21.ASC.main.dtos.SchedulingDTO;
 import br.com.entra21.ASC.main.model.Medical;
@@ -73,6 +77,5 @@ public class SchedulingServices {
 		
 		return repositori.save(newObj);
 	}
-
 	
 }
