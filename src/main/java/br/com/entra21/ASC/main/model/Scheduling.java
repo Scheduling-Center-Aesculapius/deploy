@@ -31,7 +31,6 @@ public class Scheduling implements Serializable {
 	private LocalDateTime dateClosed;
 	
 	@NotEmpty(message = "Field requerid")
-
 	private String description;
 	private Integer priority;
 	private Integer status;

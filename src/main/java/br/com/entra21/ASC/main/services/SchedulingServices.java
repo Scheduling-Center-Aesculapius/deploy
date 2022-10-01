@@ -50,12 +50,12 @@ public class SchedulingServices {
 	}
 
 	public Scheduling update(@Valid SchedulingDTO obj) {
-		
+
 		findById(obj.getId());
 		return fromDTO(obj);
 	}
 
-	
+
 	private Scheduling fromDTO(SchedulingDTO obj) {
 
 		Scheduling newObj = new Scheduling();
@@ -76,6 +76,7 @@ public class SchedulingServices {
 		}
 		
 		return repositori.save(newObj);
+		
 	}
 	
 }

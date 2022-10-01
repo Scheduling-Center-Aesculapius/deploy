@@ -17,15 +17,15 @@ public class DevConfig {
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String ddl;
 
-	@Bean // SEMPRE QUE FOR CHAMADO A CLASSE TestConfig, ESSE MÉTODO VAI SER CHAMADO
-	public boolean instanciaDB() {
-
-		if (ddl.equals("create")) {
-			this.dbServices.instaciaDB(); // instanciado nosso banco
-		}
-
-		return false;
-
-	}
+//	@Bean 
+//	public boolean instanciaDB() {
+//
+//		if (ddl.equals("create")) {
+//			this.dbServices.instaciaDB(); // instanciado nosso banco
+//		}
+//
+//		return false;
+//
+//	}
 
 }
