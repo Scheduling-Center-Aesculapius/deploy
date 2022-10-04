@@ -31,10 +31,9 @@ public class DBServices {
 	private AdminRepository adminRepository;
 	
 	public void instaciaDB() {
-		Medical m1 = new Medical(null, "Cleber", "cleber1", "batata123", Sex.M, "075.491.584-01", "dasda@dasda.com", "48998475279", "batat silva", "295", "887800", "zimbabue", "souza'", "dolres'", "balser", "Clinico Geral");
-	
+		Medical m1 = new Medical(null, "Cleber", "cleber1", "batata123", Sex.M, "075.491.584-01", "dasda@dasda.com", "(48)998475279", "batat silva", "295", "88780-000", "zimbabue", "souza'", "dolres'", "balser", "Clinico Geral");
 
-		Patient p1 = new Patient(null, "Filipe", "batatinhaFrita123", "oieu souogoku", Sex.M, "04328835416", "filipe.quickflip@gmail.com", "48998475279", "elza maria pereira pitigliani", "158", "88780-000", "Imbituba", "Santa Catarina","seu cleber","dona joana", "Diarreia");
+		Patient p1 = new Patient(null, "Filipe", "batatinhaFrita123", "oieu souogoku", Sex.M, "043.288.354-16", "filipe.quickflip@gmail.com", "(48)998475279", "elza maria pereira pitigliani", "158", "88780-000", "Imbituba", "Santa Catarina","seu cleber","dona joana", "Diarreia");
 
 		Scheduling s1 = new Scheduling(null, null, "batatinha frita", PRIORITY.HIGH, STATUS.OPEN, m1, p1);
 

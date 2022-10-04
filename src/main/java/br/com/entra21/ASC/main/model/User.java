@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -42,7 +43,7 @@ public abstract class User implements Serializable {
 
 	@NotEmpty(message = "Field requerid")
 	private String email;
-
+	
 	@NotEmpty(message = "Field requerid")
 	private String phone;
 
@@ -51,7 +52,7 @@ public abstract class User implements Serializable {
 
 	@NotEmpty(message = "Field requerid")
 	private String numberStreet;
-
+	
 	@NotEmpty(message = "Field requerid")
 	private String zipCode;
 
