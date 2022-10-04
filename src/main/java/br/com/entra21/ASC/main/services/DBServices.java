@@ -51,7 +51,7 @@ public class DBServices {
 		p1.getList().add(s1);
 		m1.getList().add(s2);
 
-		medicalRepository.saveAll(Arrays.asList(m1, m2));
+		medicalRepository.saveAll(Arrays.asList(m1));
 		patientRepository.saveAll(Arrays.asList(p1));
 		schedulingRepository.saveAll(Arrays.asList(s1));
 		adminRepository.saveAll(Arrays.asList(a1));

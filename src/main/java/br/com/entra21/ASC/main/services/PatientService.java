@@ -45,7 +45,7 @@ public class PatientService {
 		}
 		Patient newObj = new Patient(null, Obj.getName(), Obj.getUsername(), Obj.getPassword(), Obj.getSex(),
 				Obj.getCpf(), Obj.getEmail(), Obj.getPhone(), Obj.getStreet(), Obj.getNumberStreet(), Obj.getZipCode(),
-				Obj.getCity(), Obj.getState(), Obj.getSymptoms());
+				Obj.getCity(), Obj.getState(), Obj.getSymptoms(),Obj.getNameFather(),Obj.getNameMother());
 		return repository.save(newObj);
 	}
 
