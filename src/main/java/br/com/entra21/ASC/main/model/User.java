@@ -19,47 +19,53 @@ import br.com.entra21.ASC.main.model.ENUMS.Sex;
 public abstract class User implements Serializable {
 	private static final long serialVersionUID = 1l;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // geração dessa chave primaira, ficara por conta da base de
-														// dados, banco que vai criar
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // geração dessa chave primaira, ficara por conta da base de//										// dados, banco que vai criar
 	private Integer id;
+
 	@Column(name = "_from")
 	@NotEmpty(message = "Field required")
 	private String name;
+
 //	@NotEmpty(message = "Field requerid")
 //	private Integer age;
 	@NotEmpty(message = "Field requerid")
 	private String username;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String password;
-	
+
 	private Sex sex;
 
 	@CPF
 	@NotEmpty(message = "Field requerid")
-
 	private String cpf;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String email;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String phone;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String street;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String numberStreet;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String zipCode;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String city;
-	@NotEmpty(message = "Field requerid")
 
+	@NotEmpty(message = "Field requerid")
 	private String state;
+
+	@NotEmpty(message = "Field requerid")
+	private String nameMother;
+
+	@NotEmpty(message = "Field requerid")
+	private String nameFather;
 
 	public User() {
 		super();
@@ -67,7 +73,8 @@ public abstract class User implements Serializable {
 	}
 
 	public User(Integer id, String name, String username, String password, Sex sex, String cpf, String email,
-			String phone, String street, String numberStreet, String zipCode, String city, String state) {
+			String phone, String street, String numberStreet, String zipCode, String city, String state,
+			String nameMother, String nameFather) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -82,6 +89,24 @@ public abstract class User implements Serializable {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.state = state;
+		this.nameMother = nameMother;
+		this.nameFather = nameFather;
+	}
+
+	public String getNameMother() {
+		return nameMother;
+	}
+
+	public void setNameMother(String nameMother) {
+		this.nameMother = nameMother;
+	}
+
+	public String getNameFather() {
+		return nameFather;
+	}
+
+	public void setNameFather(String nameFather) {
+		this.nameFather = nameFather;
 	}
 
 	public Integer getId() {

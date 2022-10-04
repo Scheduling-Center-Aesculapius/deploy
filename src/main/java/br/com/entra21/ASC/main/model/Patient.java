@@ -19,11 +19,25 @@ public class Patient extends User implements Serializable{
 		super();
 	}
 
-	public Patient(Integer id,String name, String username, String password, Sex sex, String cpf, String email, String phone,
-			String street, String numberStreet, String zipCode, String city, String state, String symptoms) {
-		super(id, name, username, password, sex, cpf, email, phone, street, numberStreet, zipCode, city, state);
+	
+
+	public Patient(String symptoms, List<Scheduling> list) {
+		super();
 		this.symptoms = symptoms;
 	}
+
+
+
+	public Patient(Integer id, String name, String username, String password, Sex sex, String cpf, String email,
+			String phone, String street, String numberStreet, String zipCode, String city, String state,
+			String nameMother, String nameFather,String symptoms) {
+		super(id, name, username, password, sex, cpf, email, phone, street, numberStreet, zipCode, city, state, nameMother,
+				nameFather);
+		// TODO Auto-generated constructor stub
+		this.symptoms = symptoms;
+	}
+
+
 
 	public String getSymptoms() {
 		return symptoms;

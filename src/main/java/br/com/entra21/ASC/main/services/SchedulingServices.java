@@ -1,8 +1,7 @@
 package br.com.entra21.ASC.main.services;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,8 +9,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import br.com.entra21.ASC.main.dtos.SchedulingDTO;
 import br.com.entra21.ASC.main.model.Medical;
@@ -55,13 +52,22 @@ public class SchedulingServices {
 		return fromDTO(obj);
 	}
 
+	public List<SchedulingDTO> getByLessThan() {
+		LocalDateTime agora = LocalDateTime.now();
+		agora.with(LocalTime.MIN);
+		return repositori.findByDateOpenBefore(LocalDateTime.now());
+	}
+	
 
 	private Scheduling fromDTO(SchedulingDTO obj) {
 
 		Scheduling newObj = new Scheduling();
 		newObj.setId(obj.getId());
 		newObj.setDescription(obj.getDescription());
-
+		newObj.setDateOpen(obj.getDateOpen());
+		if(newObj.getDateOpen() == null) {
+			newObj.setDateOpen(LocalDateTime.now());
+		}
 		newObj.setPriority(PRIORITY.toEnum(obj.getPriority()));
 		newObj.setStatus(STATUS.toEnum(obj.getStatus()));
 

@@ -37,7 +37,7 @@ public class MedicalService {
 		if(findByCpf(Obj) != null) {
 			throw new DataIntregatyViolationException("CPF já cadastrado na base de dados!");
 		}
-		Medical newObj = new Medical(null, Obj.getName(), Obj.getUsername(), Obj.getPassword(), Obj.getSex(), Obj.getCpf(),Obj.getEmail(),Obj.getPhone(),Obj.getStreet(),Obj.getNumberStreet(),Obj.getZipCode(),Obj.getCity(),Obj.getState(),Obj.getSpecialty());
+		Medical newObj = new Medical(null, Obj.getName(), Obj.getUsername(), Obj.getPassword(), Obj.getSex(), Obj.getCpf(),Obj.getEmail(),Obj.getPhone(),Obj.getStreet(),Obj.getNumberStreet(),Obj.getZipCode(),Obj.getCity(),Obj.getState(),Obj.getSpecialty(), Obj.getNameFather(), Obj.getNameMother());
 		return repository.save(newObj);
 	}
 	

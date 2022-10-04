@@ -31,16 +31,22 @@ public class Medical extends User implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Medical(Integer id,String name, String username, String password, Sex sex, String cpf, String email, String phone,
-			String street, String numberStreet, String zipCode, String city, String state, String specialty) {
-		super(id, name, username, password, sex, cpf, email, phone, street, numberStreet, zipCode, city, state);
-		// TODO Auto-generated constructor stub
+
+
+
+	public Medical(String specialty, List<Scheduling> list) {
+		super();
 		this.specialty = specialty;
 	}
 
-
-
-
+	public Medical(Integer id, String name, String username, String password, Sex sex, String cpf, String email,
+			String phone, String street, String numberStreet, String zipCode, String city, String state,
+			String nameMother, String nameFather,String specialty) {
+		super(id, name, username, password, sex, cpf, email, phone, street, numberStreet, zipCode, city, state, nameMother,
+				nameFather);
+		// TODO Auto-generated constructor stub
+		this.specialty = specialty;
+	}
 
 	public String getSpecialty() {
 		return specialty;

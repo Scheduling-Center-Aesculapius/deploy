@@ -1,10 +1,6 @@
 package br.com.entra21.ASC.main.resources;
 
 import java.net.URI;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.entra21.ASC.main.dtos.SchedulingDTO;
-import br.com.entra21.ASC.main.repositories.SchedulingRepository;
 import br.com.entra21.ASC.main.services.SchedulingServices;
 
 @CrossOrigin(origins = "*")
@@ -34,8 +29,6 @@ public class SchedulingResource {
 	@Autowired
 	private SchedulingServices services;
 	
-	@Autowired
-	private SchedulingRepository repositori;
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<SchedulingDTO> findById(@PathVariable Integer id) {
@@ -66,12 +59,10 @@ public class SchedulingResource {
 
 	}
 	
-	@GetMapping(value = "/teste")
-	public List<SchedulingDTO> getByLessThan() {
-		LocalDateTime agora = LocalDateTime.now();
-		//agora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		agora.with(LocalTime.MIN);
-		return repositori.findByDateOpenBefore(LocalDateTime.now());
+	@GetMapping(value = "/lessthan")
+	public ResponseEntity<List<SchedulingDTO>> getByLessThan() {
+		
+		return ResponseEntity.ok().body(services.getByLessThan());
 	}
 
 }
