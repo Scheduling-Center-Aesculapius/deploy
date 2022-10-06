@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.entra21.ASC.main.model.Admin;
 import br.com.entra21.ASC.main.model.TeamDados;
 import br.com.entra21.ASC.main.repositories.TeamRepository;
 import br.com.entra21.ASC.main.services.exception.ObjectNotFoundException;
 
 @CrossOrigin(origins = "*")
 @RestController // VAI PODER RECEBER REQUISIÇÕES DO TIPO HTTP
-@RequestMapping(value = "/TeamDadoss") // SETANDO UM ENDPOINT INICIAL PARA PODERMOS ACESSAR O RECURSO DOS MEDICOS
+@RequestMapping(value = "/TeamDados") // SETANDO UM ENDPOINT INICIAL PARA PODERMOS ACESSAR O RECURSO DOS MEDICOS
 public class TeamResource {
 
 	
@@ -41,6 +42,14 @@ public class TeamResource {
 				// SER APLICADO ESSE MÉTODO ONDE VAMOS LISTAR TODOS
 	public List<TeamDados> findAll() {
 		return repository.findAll();
+	}
+	
+	private TeamDados findByUsername(TeamDados obj) {
+		TeamDados objNew = repository.findByUsername(obj.getName());
+		if (objNew != null) {
+			return objNew;
+		}
+		return null;
 	}
 }
 
