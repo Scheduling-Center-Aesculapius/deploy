@@ -15,16 +15,17 @@ public class TeamDados {
 	private String image;
 	private String name;
 	private String github;
-	private String linkedin;
+		private String linkedin;
 	private String portfolio;
 	
 	public TeamDados(ResponseEntity<TeamDados> responseEntity) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public TeamDados(String image, String name, String github, String linkedin,
+	public TeamDados(Integer id, String image, String name, String github, String linkedin,
 			String portfolio) {
 		super();
+		this.id = id;
 		this.image = image;
 		this.name = name;
 		this.github = github;
@@ -71,7 +72,13 @@ public class TeamDados {
 		this.portfolio = portfolio;
 	}
 	
-	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	
 	
 	

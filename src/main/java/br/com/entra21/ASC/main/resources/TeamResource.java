@@ -15,7 +15,7 @@ import br.com.entra21.ASC.main.services.exception.ObjectNotFoundException;
 
 @CrossOrigin(origins = "*")
 @RestController // VAI PODER RECEBER REQUISIÇÕES DO TIPO HTTP
-@RequestMapping(value = "/teamDados") // SETANDO UM ENDPOINT INICIAL PARA PODERMOS ACESSAR O RECURSO DOS MEDICOS
+@RequestMapping(value = "/team") // SETANDO UM ENDPOINT INICIAL PARA PODERMOS ACESSAR O RECURSO DOS MEDICOS
 public class TeamResource {
 
 	
