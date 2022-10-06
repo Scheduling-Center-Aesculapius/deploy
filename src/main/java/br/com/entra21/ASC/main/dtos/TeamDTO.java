@@ -23,6 +23,7 @@ public class TeamDTO implements Serializable {
 
 	public TeamDTO(TeamDados obj) {
 		// TODO Auto-generated constructor stub
+		this.id = obj.getId();
 		this.image = obj.getImage();
 		this.name = obj.getName();
 		this.github = obj.getGithub();
