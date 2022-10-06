@@ -63,6 +63,7 @@ public class DBServices {
 		patientRepository.saveAll(Arrays.asList(p1));
 		schedulingRepository.saveAll(Arrays.asList(s1));
 		adminRepository.saveAll(Arrays.asList(a1));
+		teamRepository.saveAll(Arrays.asList(filipe));
 	}
 	
 }
