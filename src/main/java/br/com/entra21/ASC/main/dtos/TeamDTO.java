@@ -2,7 +2,6 @@ package br.com.entra21.ASC.main.dtos;
 
 import java.io.Serializable;
 
-import br.com.entra21.ASC.main.model.Admin;
 import br.com.entra21.ASC.main.model.TeamDados;
 
 public class TeamDTO implements Serializable {

@@ -54,6 +54,9 @@ public class DBServices {
 		
 		TeamDados filipe = new TeamDados(null,"https://drive.google.com/file/d/1tm-8NTeO_7BDK0YEJ_qgXq5he6OO8UD2/view?usp=sharing", "Filipe Albuquerque", "https://github.com/Lipe-Albuquerque", "https://www.linkedin.com/in/filipe-albuquerque-9689891a5/", "https://lipe-albuquerque.github.io/");
 		
+		TeamDados ariana = new TeamDados(null,"https://drive.google.com/file/d/1BCLrJDmmqtuA0MQVjEg2c0oHCBYGQkII/view?usp=sharing", "Ariana Silva", "https://github.com/ariana-ssilva", "https://www.linkedin.com/in/ariana-moreira-691a86217/", "https://ariana-ssilva.github.io/");
+		
+		TeamDados thiago = new TeamDados(null,"https://drive.google.com/file/d/1lAJU6KrY9_mXi65nCGQ08M6hciehItb-/view?usp=sharing", "Thiago Souza", "https://github.com/wzthiago", "https://www.linkedin.com/in/thiago-souza-53b03979/", "https://wzthiago.github.io/");
 		
 		m1.getList().add(s1);
 		p1.getList().add(s1);
@@ -64,6 +67,8 @@ public class DBServices {
 		schedulingRepository.saveAll(Arrays.asList(s1));
 		adminRepository.saveAll(Arrays.asList(a1));
 		teamRepository.saveAll(Arrays.asList(filipe));
+		teamRepository.saveAll(Arrays.asList(ariana));
+		teamRepository.saveAll(Arrays.asList(thiago));
 	}
 	
 }

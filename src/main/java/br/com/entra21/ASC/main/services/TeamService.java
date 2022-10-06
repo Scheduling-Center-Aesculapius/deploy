@@ -25,7 +25,7 @@ public class TeamService {
 	public TeamDados findById(Integer id) {
 		Optional<TeamDados> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"OBJETO NÃO ENCONTRADO! ID: " + id + ", tipo: " + Admin.class.getName()));
+				"OBJETO NÃO ENCONTRADO! ID: " + id + ", tipo: " + TeamDados.class.getName()));
 	}
 
 // RETORNANDO UMA LISTA DE ADMINS
