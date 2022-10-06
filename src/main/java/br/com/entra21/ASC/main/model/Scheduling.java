@@ -54,7 +54,11 @@ public class Scheduling implements Serializable {
 			Patient patient) {
 		super();
 		this.id = id;
-		this.dateOpen = dataOpen;
+		if (dataOpen == null) {
+			this.setDateOpen(LocalDateTime.now()); 
+		}else {
+			this.dateOpen = dataOpen;
+		}
 		this.description = description;
 		this.priority = (priority == null) ? 0 : priority.getCod();
 		this.status = (status == null) ? 0 : status.getCod();

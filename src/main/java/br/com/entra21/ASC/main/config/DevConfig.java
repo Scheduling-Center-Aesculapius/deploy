@@ -12,29 +12,22 @@ import br.com.entra21.ASC.main.services.DBServices;
 @Profile("dev")
 public class DevConfig {
 
-//	@Autowired
-//	private DBServices dbServices;
+	@Autowired
+	private DBServices dbServices;
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String ddl;
 
-//	@Bean 
-//	public boolean instanciaDB() {
-//
-//		if (ddl.equals("create")) {
-//			this.dbServices.instaciaDB(); // instanciado nosso banco
-//		}
-//
-//		return false;
-//
-//	}
+	@Bean 
+	public boolean instanciaDB() {
 
-	
-	@Autowired
-	private DBServices dbServices;
-	
-	@Bean  //SEMPRE QUE FOR CHAMADO A CLASSE TestConfig, ESSE MÉTODO VAI SER CHAMADO
-	public void instanciaDB() {
-		this.dbServices.instaciaDB(); //instanciado nosso banco
+		if (ddl.equals("create")) {
+			this.dbServices.instaciaDB(); // instanciado nosso banco
+		}
+
+		return false;
+
 	}
-
 }
+
+	
+
