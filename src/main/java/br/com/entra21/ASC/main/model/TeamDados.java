@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.http.ResponseEntity;
+
 @Entity
 public class TeamDados {
 	@Id
@@ -16,7 +18,7 @@ public class TeamDados {
 	private String linkedin;
 	private String portfolio;
 	
-	public TeamDados() {
+	public TeamDados(ResponseEntity<TeamDados> responseEntity) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,6 +32,14 @@ public class TeamDados {
 		this.portfolio = portfolio;
 	}
 	
+	public TeamDados(TeamDados obj) {
+		// TODO Auto-generated constructor stub
+		this.image = obj.image;
+		this.name = obj.name;
+		this.github = obj.github;
+		this.linkedin = obj.linkedin;
+		this.portfolio = obj.portfolio;
+	}
 	public String getImage() {
 		return image;
 	}
