@@ -21,13 +21,14 @@ public class TeamDTO implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public TeamDTO(TeamDados team) {
-		super();
-		this.id = team.getId();
-		this.name = team.getName();
+	public TeamDTO(TeamDados obj) {
+		// TODO Auto-generated constructor stub
+		this.image = obj.getImage();
+		this.name = obj.getName();
+		this.github = obj.getGithub();
+		this.linkedin = obj.getLinkedin();
+		this.portfolio = obj.getPortfolio();
 	}
-
 	public Integer getId() {
 		return id;
 	}

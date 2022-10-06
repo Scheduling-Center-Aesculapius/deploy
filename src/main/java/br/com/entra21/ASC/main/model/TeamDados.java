@@ -18,12 +18,12 @@ public class TeamDados {
 		private String linkedin;
 	private String portfolio;
 	
-	public TeamDados(ResponseEntity<TeamDados> responseEntity) {
+	
+	public TeamDados() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public TeamDados(Integer id, String image, String name, String github, String linkedin,
-			String portfolio) {
+	public TeamDados(Integer id, String image, String name, String github, String linkedin, String portfolio) {
 		super();
 		this.id = id;
 		this.image = image;
@@ -32,7 +32,6 @@ public class TeamDados {
 		this.linkedin = linkedin;
 		this.portfolio = portfolio;
 	}
-	
 	public TeamDados(TeamDados obj) {
 		// TODO Auto-generated constructor stub
 		this.image = obj.image;
