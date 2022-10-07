@@ -52,11 +52,11 @@ public class DBServices {
 		Admin a1 = new Admin(null, "teste", "admin", "admin");
 
 		
-		TeamDados filipe = new TeamDados(null,"https://drive.google.com/file/d/1tm-8NTeO_7BDK0YEJ_qgXq5he6OO8UD2/view?usp=sharing", "Filipe Albuquerque", "https://github.com/Lipe-Albuquerque", "https://www.linkedin.com/in/filipe-albuquerque-9689891a5/", "https://lipe-albuquerque.github.io/");
+		TeamDados filipe = new TeamDados(null,"https://avatars.githubusercontent.com/Lipe-Albuquerque", "Filipe Albuquerque", "https://github.com/Lipe-Albuquerque", "https://www.linkedin.com/in/filipe-albuquerque-9689891a5/", "https://lipe-albuquerque.github.io/");
 		
-		TeamDados ariana = new TeamDados(null,"https://drive.google.com/file/d/1BCLrJDmmqtuA0MQVjEg2c0oHCBYGQkII/view?usp=sharing", "Ariana Silva", "https://github.com/ariana-ssilva", "https://www.linkedin.com/in/ariana-moreira-691a86217/", "https://ariana-ssilva.github.io/");
+		TeamDados ariana = new TeamDados(null,"https://avatars.githubusercontent.com/ariana-ssilva", "Ariana Silva", "https://github.com/ariana-ssilva", "https://www.linkedin.com/in/ariana-moreira-691a86217/", "https://ariana-ssilva.github.io/");
 		
-		TeamDados thiago = new TeamDados(null,"https://drive.google.com/file/d/1lAJU6KrY9_mXi65nCGQ08M6hciehItb-/view?usp=sharing", "Thiago Souza", "https://github.com/wzthiago", "https://www.linkedin.com/in/thiago-souza-53b03979/", "https://wzthiago.github.io/");
+		TeamDados thiago = new TeamDados(null,"https://avatars.githubusercontent.com/wzthiago", "Thiago Souza", "https://github.com/wzthiago", "https://www.linkedin.com/in/thiago-souza-53b03979/", "https://wzthiago.github.io/");
 		
 		m1.getList().add(s1);
 		p1.getList().add(s1);
