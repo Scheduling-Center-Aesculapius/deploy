@@ -1,5 +1,7 @@
 package br.com.entra21.ASC.main.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,5 +13,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 
 	@Query("SELECT obj FROM user_ obj WHERE obj.cpf =:cpf")
 	User findByCPF(@Param("cpf") String cpf);
+	
+	public List<User> findByEmailAndPassword(String email, String password);
 
 }
