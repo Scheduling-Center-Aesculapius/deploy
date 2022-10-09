@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.entra21.ASC.main.model.Patient;
@@ -38,6 +39,7 @@ public class PatientService {
 	public List<Patient> findAll() {
 		return repository.findAll();
 	}
+	
 
 	public Patient create(Patient Obj) {
 		if (findByCpf(Obj) != null) {
@@ -48,7 +50,16 @@ public class PatientService {
 				Obj.getCity(), Obj.getState(), Obj.getSymptoms(),Obj.getNameFather(),Obj.getNameMother());
 		return repository.save(newObj);
 	}
-
+	@PostMapping(value = "/login")
+	public Patient login(Patient obj) {
+		Patient logado = (Patient) this.userRepository.loginRe(obj.getEmail(), obj.getPassword());
+		if(logado != null ) {
+			return obj;
+		}
+		return null;
+		
+	}
+	
 	public Patient update(Integer id, @Valid Patient obj) {
 		Patient oldObj = findById(id);
 
@@ -82,7 +93,9 @@ public class PatientService {
 		repository.deleteById(id);
 		return !repository.existsById(id);
 	}
-
+	
+	
+	
 	private User findByCpf(Patient obj) {
 		User objNew = userRepository.findByCPF(obj.getCpf());
 

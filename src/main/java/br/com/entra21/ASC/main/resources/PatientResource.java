@@ -22,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.entra21.ASC.main.dtos.PatientDTO;
 import br.com.entra21.ASC.main.model.Patient;
 import br.com.entra21.ASC.main.services.PatientService;
+import br.com.entra21.ASC.main.services.exception.DataIntregatyViolationException;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -35,6 +36,14 @@ public class PatientResource {
 	public ResponseEntity<PatientDTO> findById(@PathVariable Integer id) {
 		PatientDTO objDTO = new PatientDTO(service.findById(id));
 		return ResponseEntity.ok().body(objDTO);
+	}
+	@PostMapping(value = "/login")
+	public String login(@Valid @RequestBody Patient obj){
+		PatientDTO logado = new PatientDTO(service.login(obj));
+		if(logado != null) {
+			return "redirect:/home-patiet";
+		}
+		return null;
 	}
 
 	@PostMapping

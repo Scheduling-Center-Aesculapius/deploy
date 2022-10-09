@@ -24,48 +24,48 @@ public abstract class User implements Serializable {
 	private Integer id;
 
 	@Column(name = "_from")
-	@NotEmpty(message = "Field required")
+//	@NotEmpty(message = "Field required")
 	private String name;
 
 //	@NotEmpty(message = "Field requerid")
 //	private Integer age;
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String username;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String password;
 
 	private Sex sex;
 
 	@CPF
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String cpf;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String email;
 	
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String phone;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String street;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String numberStreet;
 	
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String zipCode;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String city;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String state;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String nameMother;
 
-	@NotEmpty(message = "Field requerid")
+//	@NotEmpty(message = "Field requerid")
 	private String nameFather;
 
 	public User() {
