@@ -38,10 +38,10 @@ public class PatientResource {
 		return ResponseEntity.ok().body(objDTO);
 	}
 	@PostMapping(value = "/login")
-	public String login(@Valid @RequestBody Patient obj){
+	public PatientDTO login(@Valid @RequestBody Patient obj){
 		PatientDTO logado = new PatientDTO(service.login(obj));
 		if(logado != null) {
-			return "redirect:/home-patiet";
+			return logado;
 		}
 		return null;
 	}
