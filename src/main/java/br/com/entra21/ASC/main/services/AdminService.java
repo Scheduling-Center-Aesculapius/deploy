@@ -6,8 +6,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import br.com.entra21.ASC.main.model.Admin;
+import br.com.entra21.ASC.main.model.Patient;
 import br.com.entra21.ASC.main.repositories.AdminRepository;
 import br.com.entra21.ASC.main.services.exception.DataIntregatyViolationException;
 import br.com.entra21.ASC.main.services.exception.ObjectNotFoundException;
@@ -36,6 +38,17 @@ public class AdminService {
 		Admin newObj = new Admin(null, Obj.getName(), Obj.getUsername(), Obj.getPassword());
 		return repository.save(newObj);
 	}
+	
+	@PostMapping(value = "/login")
+	public Admin login(Admin obj) {
+		Admin logado = (Admin) this.repository.loginAd(obj.getUsername(), obj.getPassword());
+		if(logado != null ) {
+			return obj;
+		}
+		return null;
+	}
+		
+	
 
 	public Admin update(Integer id, @Valid Admin obj) {
 		Admin oldObj = findById(id);

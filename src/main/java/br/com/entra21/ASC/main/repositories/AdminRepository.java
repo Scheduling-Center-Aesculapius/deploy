@@ -6,9 +6,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import br.com.entra21.ASC.main.model.Admin;
+import br.com.entra21.ASC.main.model.User;
 
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
 	@Query("SELECT obj FROM Admin obj WHERE obj.username =:username")
 	Admin findByUsername(@Param("username") String username);
+	
+	@Query(value = "select * from admin where username = :username and password = :password", nativeQuery = true)
+	public Admin loginAd(String username, String password);
 }

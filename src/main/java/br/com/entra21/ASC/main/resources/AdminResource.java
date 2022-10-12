@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,6 +37,15 @@ public class AdminResource {
 		AdminDTO objDTO = new AdminDTO(service.findById(id));
 		return ResponseEntity.ok().body(objDTO);
 
+	}
+	
+	@PostMapping(value = "/login")
+	public AdminDTO login(@Valid @RequestBody Admin obj){
+		AdminDTO logado = new AdminDTO(service.login(obj));
+		if(logado != null) {
+			return logado;
+		}
+		return null;
 	}
 
 	@GetMapping // CASO PESQUISE PELO PARAMENTRO DESSA CLASSE, SEM INSERIR UM VALOR DE ID, VAI
