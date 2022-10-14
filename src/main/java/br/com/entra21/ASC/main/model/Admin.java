@@ -18,12 +18,9 @@ public class Admin implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // geração dessa chave primaira, ficara por conta da base de													// dados, banco que vai criar
 	private Integer id;
-	@NotEmpty(message = "Field Required")
 	@Column(name = "_from")
 	private String name;
-	@NotEmpty(message = "Field Required")
 	private String username;
-	@NotEmpty(message = "Field Required")
 //	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) não mostra a senha nas requisições
 	private String password;
 
