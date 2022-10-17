@@ -20,4 +20,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query(value = "select * from user_ where email = :email and password = :password", nativeQuery = true)
 	public User loginRe(String email, String password);
 	
+	@Query(value = "select * from user_ where crm = :crm and password = :password", nativeQuery = true)
+	public User loginReMedical(String crm, String password);
+	
 }

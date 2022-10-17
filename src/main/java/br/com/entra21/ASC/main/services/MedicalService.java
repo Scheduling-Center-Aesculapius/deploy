@@ -8,9 +8,11 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.entra21.ASC.main.model.Medical;
+import br.com.entra21.ASC.main.model.Patient;
 import br.com.entra21.ASC.main.model.User;
 import br.com.entra21.ASC.main.repositories.MedicalRepository;
 import br.com.entra21.ASC.main.repositories.UserRepository;
@@ -37,8 +39,18 @@ public class MedicalService {
 		if(findByCpf(Obj) != null) {
 			throw new DataIntregatyViolationException("CPF já cadastrado na base de dados!");
 		}
-		Medical newObj = new Medical(null, Obj.getName(), Obj.getUsername(), Obj.getPassword(), Obj.getSex(), Obj.getCpf(),Obj.getEmail(),Obj.getPhone(),Obj.getStreet(),Obj.getNumberStreet(),Obj.getZipCode(),Obj.getCity(),Obj.getState(),Obj.getSpecialty(), Obj.getNameFather(), Obj.getNameMother());
+		Medical newObj = new Medical(null, Obj.getName(), Obj.getUsername(), Obj.getPassword(), Obj.getSex(), Obj.getCpf(),Obj.getEmail(),Obj.getPhone(),Obj.getStreet(),Obj.getNumberStreet(),Obj.getZipCode(),Obj.getCity(),Obj.getState(),Obj.getSpecialty(), Obj.getNameFather(), Obj.getNameMother(), Obj.getCrm());
 		return repository.save(newObj);
+	}
+	
+	@PostMapping(value = "/login")
+	public Medical login(Medical obj) {
+		Medical logado = (Medical) this.userRepository.loginReMedical(obj.getCrm(), obj.getPassword());
+		if(logado != null ) {
+			return obj;
+		}
+		return null;
+		
 	}
 	
 	public Medical update(Integer id, @Valid Medical obj) {
@@ -62,6 +74,7 @@ public class MedicalService {
 		oldObj.setState(obj.getState());
 		oldObj.setStreet(obj.getStreet());
 		oldObj.setZipCode(obj.getZipCode());
+		oldObj.setCrm(obj.getCrm());
 		return repository.save(oldObj);
 	}
 	

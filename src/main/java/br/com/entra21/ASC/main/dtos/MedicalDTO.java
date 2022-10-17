@@ -21,6 +21,8 @@ public class MedicalDTO implements Serializable{
 	private String city;
 
 	private String state;
+	
+	private String crm;
 
 	public MedicalDTO() {
 		super();
@@ -36,7 +38,7 @@ public class MedicalDTO implements Serializable{
 		this.phone = obj.getPhone();
 		this.city = obj.getCity();
 		this.state = obj.getState();
-		
+		this.crm = obj.getCrm();		
 	}
 
 	public Integer getId() {
@@ -45,6 +47,14 @@ public class MedicalDTO implements Serializable{
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getCrm() {
+		return crm;
+	}
+
+	public void setCrm(String crm) {
+		this.crm = crm;
 	}
 
 	public String getName() {

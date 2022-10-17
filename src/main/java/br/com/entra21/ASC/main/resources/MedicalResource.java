@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.entra21.ASC.main.dtos.MedicalDTO;
+import br.com.entra21.ASC.main.dtos.PatientDTO;
 import br.com.entra21.ASC.main.model.Medical;
+import br.com.entra21.ASC.main.model.Patient;
 import br.com.entra21.ASC.main.services.MedicalService;
 @CrossOrigin(origins = "*")
 @RestController // VAI PODER RECEBER REQUISIÇÕES DO TIPO HTTP
@@ -37,6 +39,15 @@ public class MedicalResource {
 
 	}
 
+	@PostMapping(value = "/login")
+	public MedicalDTO login(@Valid @RequestBody Medical obj){
+		MedicalDTO logado = new MedicalDTO(service.login(obj));
+		if(logado != null) {
+			return logado;
+		}
+		return null;
+	}
+	
 	@GetMapping // CASO PESQUISE PELO PARAMENTRO DESSA CLASSE, SEM INSERIR UM VALOR DE ID, VAI
 				// SER APLICADO ESSE MÉTODO ONDE VAMOS LISTAR TODOS
 	public ResponseEntity<List<MedicalDTO>> findAll() {
